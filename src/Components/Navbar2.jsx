@@ -26,16 +26,16 @@ const Navbar2 = () => {
 
   return (
     <>
-      <Box border="2px solid #ccc" >
+      <Box>
          <HStack>
-          <Box  mt="2%" border="2px solid #ccc" w={["70%","70%","80%","80%"]} pl="12%">
+          <Box  mt="2%" w={["70%","70%","80%","80%"]} pl="12%">
           <Image m="auto" src={image1} ></Image>
           <Text  
           fontFamily="Georgia, serif" 
            >{Company_Name}</Text>
             <Image src={v1} m="auto"></Image>
           </Box>
-          <HStack border="2px solid #ccc" justifyContent={"space-around"} >
+          <HStack justifyContent={"space-around"} >
              <Icon  as={Search2Icon} boxSize={5}></Icon>
              <Icon as={BsBag} boxSize={5} />
              <Icon as={TiMessages} boxSize={5} />
@@ -55,7 +55,7 @@ const Navbar2 = () => {
 
           <DrawerBody>
           <VStack m="auto" display={["flex","flex","none","none"]} justifyContent="space-between" w='80%'>
-             {NavArr?.map((e)=><Text fontFamily="montserrat" fontWeight="bold">{e}</Text>)}
+             {NavArr?.map((e)=><Text fontWeight="bold">{e}</Text>)}
          </VStack>
           </DrawerBody>
 
@@ -68,7 +68,7 @@ const Navbar2 = () => {
       </Drawer>
           </HStack>
          <HStack m="auto" display={["none","none","flex","flex"]} justifyContent="space-between" w='80%'>
-             {NavArr?.map((e)=><Text fontFamily="montserrat" fontWeight="bold">{e}</Text>)}
+             {NavArr?.map((e)=><Text fontWeight="bold">{e}</Text>)}
          </HStack>
       </Box>
     </>

@@ -73,7 +73,7 @@ const handleDisplay=()=>{
         textAlign={"center"}>ABOUT OUR BLOGS</Text>
         <Heading m="auto" mb="2%"
         fontFamily={"Montserrat"} 
-        fontSize={"30px"} 
+        fontSize={["20px","22px","25px","30px"]} 
         textTransform="uppercase"
         color={"#225886"} 
         lineHeight={"37px"}

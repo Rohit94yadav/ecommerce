@@ -166,7 +166,7 @@ const BrandSection = () => {
         </Text>
         <Heading 
         fontFamily={"Montserrat"} 
-        fontSize={"30px"} 
+        fontSize={["20px","22px","25px","30px"]} 
         textTransform="uppercase"
         color={"#225886"} 
         letterSpacing="0.05em" 
@@ -225,7 +225,7 @@ const BrandSection = () => {
         borderRadius={"2px"}
         mt="2%" bg="#225886">View More <Icon as={AiOutlineArrowRight}></Icon></Button>
    
-        <Text mt="5%"
+        <Text mt={["12%","10%","7%","5%"]}
         fontFamily={"Montserrat"} 
         fontSize={"15px"} 
         textTransform="uppercase"
@@ -237,15 +237,15 @@ const BrandSection = () => {
         <Heading 
         fontFamily={"Montserrat"} 
         fontWeight="800" 
-        fontSize={"30px"} 
+        fontSize={["20px","22px","25px","30px"]} 
         lineHeight={"37px"}
         textAlign={"center"}
         color={"#225886"} 
         letterSpacing="0.05em"
-        textTransform="uppercase"
+        textTransform="uppercase" mt="1%" mb="1%"
         >OUR BEST VENDOR</Heading>
         <Text fontWeight="800" fontFamily={"Montserrat"} 
-        fontSize={"30px"} 
+        fontSize={["20px","22px","25px","30px"]} 
         lineHeight={"37px"}
         textAlign={"center"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, aliquam.</Text>
     

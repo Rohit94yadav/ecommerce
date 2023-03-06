@@ -9,7 +9,7 @@ import {Icon} from '@chakra-ui/react';
 const Footer = () => {
   return (
     <>
-    <Box w="100%" bg="#F4F4F4" pt="3%">
+    <Box w="100%" bg="#F4F4F4" pt="3%" mt="3%">
         <Heading textAlign={'center'} 
         fontSize={"18px"}
         lineHeight="22px"

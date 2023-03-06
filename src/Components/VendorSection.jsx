@@ -38,7 +38,7 @@ const VendorSection = () => {
             >Lorem, ipsum dolor.</Text>
             <Heading
             fontFamily={"Montserrat"} 
-            fontSize={"30px"} 
+            fontSize={["20px","22px","25px","30px"]} 
             textTransform="uppercase"
             color={"#225886"} 
             lineHeight={"37px"}

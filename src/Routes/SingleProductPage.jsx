@@ -90,16 +90,18 @@ const SingleProductPage = () => {
       flexDirection={["column","column","row","row"]}
       justifyContent={["space-between"]}
       >
-        <Box w={["100%","100%","50%","50%"]}>
-            <Image src={data.image} h="100%" w="100%"></Image>
+        <Box 
+        w={["100%","100%","50%","40%"]} 
+        >
+            <Image src={data.image} h={["100%","100%","100%","554px"]} w="100%"></Image>
         </Box>
        
-        <VStack pb="2%" 
-        pl="2%" textAlign={"start"} 
+        <VStack pb="2%" w={["100%","100%","50%","60%"]}
+        pl="2%" textAlign={"start"}
         alignItems="start" 
         justifyContent="space-between">
             <Heading color="#225886" 
-            fontSize={'30px'}
+            fontSize={['20px','20px','22px','30px']} 
             lineHeight="36.57px"
             fontWeight={"800"}
             fontFamily="Montserrat">{data.title}</Heading>
@@ -109,41 +111,42 @@ const SingleProductPage = () => {
             <HStack justifyContent={"start"} w="100%">
                 <Text textDecoration={"line-through"}
                  color="gray" 
-            fontSize={'16px'}
+            fontSize={['10px','12px','14px','16px']}
             lineHeight="20.57px"
             fontWeight={"700"}
             fontFamily="Montserrat">{data.price}</Text>
                 <Text color="#1E1E1E" 
-            fontSize={'22px'}
+            fontSize={['16px','16px','16px','22px']} 
             lineHeight="27px"
             fontWeight={"700"}
             fontFamily="Montserrat">{data.finalPrice}</Text>
             </HStack>
 
             <Text color="#1E1E1E" 
-            fontSize={'16px'}
+            fontSize={['14px','14px','14px','16px']} 
             fontWeight={"400"}
             fontFamily="Montserrat">{data.info}</Text>
 
             <Text color="#1E1E1E" 
-            fontSize={'15px'}
+            fontSize={['11px','12px','12px','15px']}
             fontWeight={"400"}
             lineHeight="18px"
             fontFamily="Montserrat">SKU: <span style={{fontWeight:"bold"}}>{data.sku}</span></Text>
 
             <HStack w="100%">
             <Text color="#1E1E1E" 
-            fontSize={'15px'}
+            fontSize={['11px','12px','12px','15px']}
             fontWeight={"400"}
             lineHeight="18px"
             fontFamily="Montserrat">
                 CATEGORIES: 
             </Text> 
-             <HStack justifyContent={"start"} textAlign="start" w="100%">
+             <HStack flexWrap={'wrap'}
+               justifyContent={"start"} textAlign="start" w="100%">
                 {data.categories?.map((el,i)=>
                 <Text key={i}
                 color="#1E1E1E" 
-                fontSize={'15px'}
+                fontSize={['12px','12px','12px','15px']}
                 fontWeight={"bold"}
                 lineHeight="18px"
                 fontFamily="Montserrat" 
@@ -154,16 +157,16 @@ const SingleProductPage = () => {
 
             <HStack w="100%">
             <Text color="#1E1E1E" 
-                fontSize={'15px'}
+                fontSize={['11px','12px','12px','15px']}
                 fontWeight={"400"}
                 lineHeight="18px"
                 fontFamily="Montserrat" >
                 TAGS: 
             </Text> 
-             <HStack justifyContent={"start"} textAlign="start" w="100%">
+             <HStack flexWrap={'wrap'} justifyContent={"start"} textAlign="start" w="100%">
                 {data.tags?.map((el,i)=>
                 <Text key={i} color="#1E1E1E" 
-                fontSize={'15px'}
+                fontSize={['11px','12px','12px','15px']}
                 fontWeight={"bold"}
                 lineHeight="18px"
                 fontFamily="Montserrat" textAlign="start">{el}</Text>
@@ -173,51 +176,73 @@ const SingleProductPage = () => {
 
             <VStack w="100%" alignItems={"start"}>
             <Text color="#1E1E1E" 
-                fontSize={'15px'}
+                fontSize={['11px','12px','13px','15px']}
                 fontWeight={"400"}
                 lineHeight="18px"
                 fontFamily="Montserrat" >
                 COLORS: 
             </Text> 
-             <HStack  justifyContent={"start"} textAlign="start" w="100%">
+             <HStack flexWrap={'wrap'} 
+             justifyContent={"start"} textAlign="start" w="100%">
                 {data.colors?.map((el,i)=>
-                <Box key={i} h="40px" w="40px" bg={el}></Box>
+                <Box key={i} 
+                h={['25px','30px','35px','40px']}
+                w={['25px','30px','35px','40px']}
+                 bg={el}></Box>
                 )}
             </HStack>
             </VStack>
 
             <VStack w="100%" alignItems={"start"}>
             <Text color="#1E1E1E" 
-                fontSize={'15px'}
+                fontSize={['11px','12px','13px','15px']}
                 fontWeight={"400"}
                 lineHeight="18px"
                 fontFamily="Montserrat">
                 SIZE: 
             </Text> 
-             <HStack justifyContent={"start"} textAlign="start" w="100%">
+             <HStack flexWrap={'wrap'} justifyContent={"start"} textAlign="start" w="100%">
                 {data.size?.map((el,i)=>
-                <Box key={i} h="40px" w="40px" display={"flex"} fontWeight={'600'}
-                justifyContent="center" alignItems={"center"} fontSize={"18px"}
+                <Box key={i}
+                h={['25px','30px','35px','40px']}
+                w={['25px','30px','35px','40px']} 
+                  display={"flex"} fontWeight={'600'}
+                justifyContent="center" alignItems={"center"} 
+                fontSize={['12px','14px','16px','18px']}
                 lineHeight="22px" color={"#1E1E1E"}
                 border="2px solid #1E1E1E">{el}</Box>
                 )}
             </HStack>
             </VStack>
 
-            <HStack  alignItems={'center'}>
+            <HStack  alignItems={'center'} >
                 <HStack boxSizing='border-box' justifyContent={"start"}>
-                <Box position={'relative'} left="0px" h="43px" w="37px" display={"flex"} fontWeight={'500'}
-                justifyContent="center" alignItems={"center"} fontSize={12}
+                <Box position={'relative'} left="0px" 
+                h={['28px','33px','38px','43px']} 
+                w={['22px','37px','32px','37px']} 
+                display={"flex"} fontWeight={'500'}
+                justifyContent="center" alignItems={"center"} 
+                fontSize={['12px','14px','16px','18px']}
                 border="2px solid #ccc" color={"#1E1E1E"}>-</Box>
-                <Box position={'relative'} left="-8px" h="43px" w="37px" display={"flex"} fontWeight={'500'}
-                justifyContent="center" alignItems={"center"} fontSize={12}
+                <Box position={'relative'} left="-8px" 
+                 h={['28px','33px','38px','43px']} 
+                 w={['22px','37px','32px','37px']}  
+                display={"flex"} fontWeight={'500'}
+                justifyContent="center" 
+                alignItems={"center"} 
+                fontSize={['12px','14px','16px','18px']}
                 border="2px solid #ccc" color={"#1E1E1E"}>{data.qty}</Box>
-                <Box  position={'relative'} left="-16px" ml="-8px" h="43px" w="37px"
+                <Box  position={'relative'} left="-16px" ml="-8px" 
+                 h={['28px','33px','38px','43px']} 
+                 w={['22px','37px','32px','37px']} 
                  display={"flex"} fontWeight={'500'}
-                justifyContent="center" alignItems={"center"} fontSize={12}
+                justifyContent="center" alignItems={"center"} 
+                fontSize={['12px','14px','16px','18px']}
                 border="2px solid #ccc" color={"#1E1E1E"}>+</Box>
                 </HStack>
-                <Button h="43px" color="#FFFFFF" mt="7%" 
+                <Button 
+                h={['28px','33px','38px','43px']} 
+                color="#FFFFFF" mt="7%" 
                 fontSize={'15px'}
                 fontWeight={"400"}
                 lineHeight="18px"
@@ -233,28 +258,26 @@ const SingleProductPage = () => {
       <HStack h="97px" w="80%" m="auto" justifyContent={'flex-start'} mt="2%" mb="1%">
             {data.pics.map((e,i)=>
             <Image 
-            // onMouseOver={()=>handleModal(e)} 
-            // onMouseUp={closeModal}
             key={i}  h="97px" w="97px" src={e}></Image>)}
       </HStack>
 
       {/* Tabs-section */}
 
-       <Tabs w="80%" m="auto">
-            <TabList color="#D9D9D9"
-                fontSize={'18px'}
+       <Tabs w="80%" m="auto" maxW="80%">
+            <TabList color="#D9D9D9" w="100%"
+                fontSize={['10px','12px','14px','16px']} maxW="100%"
                 lineHeight="22px"
                 fontFamily="Montserrat"  >
-                <Tab fontWeight={"700"}>DESCRIPTION</Tab>
-                <Tab fontWeight={"700"}>ADDITIONAL INFORMATION</Tab>
-                <Tab fontWeight={"700"}>REVIEWS({data.reviews.length})</Tab>
+                <Tab fontWeight={"700"} fontSize={['10px','12px','14px','16px']}>DESCRIPTION</Tab>
+                <Tab fontWeight={"700"}  fontSize={['10px','12px','14px','16px']}>ADDITIONAL INFORMATION</Tab>
+                <Tab fontWeight={"700"} fontSize={['10px','12px','14px','16px']}>REVIEWS({data.reviews.length})</Tab>
             </TabList>
 
             <TabPanels>
                 <TabPanel>
                     <VStack textAlign={"start"} alignItems="start">
                         <Text color="#282828" 
-                            fontSize={'16px'}
+                            fontSize='16px'
                             fontWeight={"400"}
                             lineHeight="20.4px"
                             fontFamily="Montserrat" >{data.description.heading}</Text>
@@ -359,22 +382,11 @@ const SingleProductPage = () => {
       <Modal isOpen={isOpen} onClose={onClose} >
         <ModalOverlay />
         <ModalContent>
-          {/* <ModalHeader>Modal Title</ModalHeader>
-          <ModalCloseButton /> */}
           <ModalBody p="7%">
             <Image h="400px" src={pic}></Image>
           </ModalBody>
-          {/* <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant='ghost'>Secondary Action</Button>
-          </ModalFooter> */}
         </ModalContent>
       </Modal>
-    {/* </>
-  )
-} */}
     </>
   )
 }

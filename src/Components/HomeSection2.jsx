@@ -24,8 +24,8 @@ const HomeSection2 = () => {
        allowfullscreen></iframe>
        
        <FormControl>
-        <Heading color={"#225886"} fontSize={"25px"} 
-        mt={["2%","2%","2px","0px"]}
+        <Heading color={"#225886"} fontSize={["20px","20px","22px","25px"]} 
+        mt={["2%","2%","2px","0px"]} fontFamily={"Montserrat"}
         fontWeight={"800"} textTransform="uppercase">Lorem ipsum dolor sit.</Heading>
         <Grid templateColumns={"repeat(2,1fr)"} gap="2%">
           <GridItem >

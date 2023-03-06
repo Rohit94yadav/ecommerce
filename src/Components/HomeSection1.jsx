@@ -99,7 +99,7 @@ const HomeSection1 = () => {
         </HStack>
         </GridItem>
 
-        <GridItem borderRadius={"10px"} colSpan={1} rowSpan={1} bg='#B1CCDF' 
+        <GridItem pb="3%" borderRadius={"10px"} colSpan={1} rowSpan={1} bg='#B1CCDF' 
         display="flex" justifyContent={"center"} 
         flexDirection={"column"} alignItems="center" >
               <Heading m="auto" w="90%" 
@@ -123,7 +123,7 @@ const HomeSection1 = () => {
                >CUSTOM MANUFACTURING</Heading>
               <Text
                m="auto" 
-               w="100%"
+               w="90%"
                fontSize={["9px","10px","11px","12.1271px"]} position="relative" top="-22px"
                fontWeight={"700"}>PROMINANAT BRANDS TRUSTNG ON OUR MANUFACTURING PRODUCTS <br />AND DELEVERY</Text>
               <Divider borderRadius={"8.77202px"}
@@ -134,7 +134,7 @@ const HomeSection1 = () => {
                />
         </GridItem>
 
-        <GridItem borderRadius={"10px"} colSpan={1} 
+        <GridItem borderRadius={"10px"} colSpan={1} pb="3%"
         rowSpan={2} bg='#F65328' color="white" 
         display="flex" justifyContent={"center"} 
         flexDirection={"column"} alignItems="center" >

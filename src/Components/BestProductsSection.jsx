@@ -131,8 +131,10 @@ const BestProductsSection = () => {
 
   return (
     <>
-        <Text mt="5%">RECOMMENDED FOR YOU</Text>
-        <Heading color="blue.700" mb="2%">BEST PRODUCTS</Heading>
+        <Text mt="5%" fontFamily="Montserrat">RECOMMENDED FOR YOU</Text>
+        <Heading color="blue.700" mb="2%" 
+        fontSize={["20px","22px","25px","30px"]}
+        fontFamily="Montserrat">BEST PRODUCTS</Heading>
 
         <Box w="80%" m="auto" >
         <Carousels items={items}></Carousels>

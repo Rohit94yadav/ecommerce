@@ -71,14 +71,14 @@ const Navbar = () => {
               right={["10%","25%","25%","15%"]}></Input>
           <HStack
               alignItems={"center"} position="absolute" 
-              right={["7%","7%","5%","0%"]}
+              right={["10%","7%","5%","0%"]}
               justifyContent={"space-around"} 
               display={["flex","flex","flex","flex"]}>
              <Icon  as={Search2Icon} boxSize={5} 
              onClick={handleSearch}></Icon>
-             <Icon as={BsBag} boxSize={5} />
-             <Icon as={TiMessages} boxSize={5} />
-             <Icon as={CgProfile} boxSize={5} />
+             <Icon as={BsBag} boxSize={[4,5,5,5]} />
+             <Icon as={TiMessages} boxSize={[4,4,5,5]} />
+             <Icon as={CgProfile} boxSize={[4,4,5,5]} />
           </HStack>
           <Icon position="absolute" right="0%"
               as={GiHamburgerMenu} boxSize={5} 

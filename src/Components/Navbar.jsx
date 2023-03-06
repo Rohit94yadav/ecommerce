@@ -1,13 +1,21 @@
-import { Box, HStack, Image, Text, Icon, useDisclosure, Input, Button, VStack } from '@chakra-ui/react'
+import { Box,
+HStack,
+Image,
+Text,
+Icon,
+useDisclosure,
+Input,
+ Button,
+VStack } from '@chakra-ui/react'
 import React from 'react'
 import image1 from "../Images/image 1.svg"
 import v1 from "../Images/Vector.png"
-import v2 from "../Images/Vector12.png"
 import { Search2Icon } from '@chakra-ui/icons'
 import { TiMessages } from 'react-icons/ti'
 import { BsBag } from 'react-icons/bs'
 import { CgProfile } from 'react-icons/cg';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { Link } from 'react-router-dom'
 import {
   Drawer,
   DrawerBody,
@@ -16,83 +24,138 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
+import "@fontsource/cinzel-decorative";
+import { useState } from 'react'
 
 const Navbar = () => {
 
+  const [currentRoute,setCurrentRoute]=useState("/")
+  const { isOpen, onOpen, onClose } = useDisclosure()
   let NavArr=["HOME","BRANDS","MEN","WOMEN","LEATHER","FOOTWEAR","HOME DECOR", "VENDOR/BUYER", "FRESH STOCKS"]
+  let routesArr=["/","/brands","/men","/women","/leather","/footwear","/homedecor","/vendor","/freshstocks"]
   let Company_Name="Company Name"
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const [searchDisplay,setSearchDisplay]=useState("none");
+
+  const handleSearch=()=>{
+    searchDisplay=="none"?setSearchDisplay("inline-block"):setSearchDisplay("none")
+  }
+
+  const handleRoute=(route)=>{
+    setCurrentRoute(route)
+    console.log(currentRoute)
+  }
 
   return (
     <>
-      <Box >
-         <HStack>
-         {/* <HStack> */}
-          <Box  mt="2%" w={["85%","90%","80%","80%"]} pl="12%">
-          <Image m="auto" src={image1} 
-          // top="18px" left="786.79px" 
-          // w="27.09px" h="22.07px" position="absolute"
-          ></Image>
-          <Text  
-          fontFamily="Georgia, serif" 
-          // top="40px" left="738.19px"
-          //  w="123px" h="19px" position="absolute"
-           >{Company_Name}</Text>
-           {/* <HStack border="2px solid #ccc"> */}
-            {/* <Image src={v2}></Image> */}
-            <Image src={v1} m="auto"></Image>
-            {/* <Image src={v2}></Image> */}
-           {/* </HStack> */}
+      <Box m="auto" w="80%" mt="2%" mb="2%"
+          position="relative">
+         <HStack  w="100%">
+          <Box  m={["2%","2%","2%","auto"]} mt="1%" mb="1%">
+            <Image m="auto" src={image1} w={"27.09px"} h="22.07px" ></Image>
+            <Text mt="5%" mb="2%"
+            w="123px" 
+            h="19px"
+            fontFamily="Cinzel Decorative" 
+            textAlign={"center"} 
+            color={"#282828"} 
+            fontSize="14.2257px" 
+            lineHeight={"19px"}>{Company_Name}</Text>
+            <Image src={v1} m="auto" ></Image>
           </Box>
-          <HStack justifyContent={"space-around"} display={["none","none","flex","flex"]}>
-             <Icon  as={Search2Icon} boxSize={5}></Icon>
+          <Input w={["40%","50%","50%","22%"]} m="auto"
+              display={["none","none",searchDisplay,searchDisplay]}
+              placeholder="Search" borderRadius={"7px"}
+              position="absolute" size={'sm'} border="2px solid #ccc"
+              right={["10%","25%","25%","15%"]}></Input>
+          <HStack
+              alignItems={"center"} position="absolute" 
+              right={["7%","7%","5%","0%"]}
+              justifyContent={"space-around"} 
+              display={["flex","flex","flex","flex"]}>
+             <Icon  as={Search2Icon} boxSize={5} 
+             onClick={handleSearch}></Icon>
              <Icon as={BsBag} boxSize={5} />
              <Icon as={TiMessages} boxSize={5} />
              <Icon as={CgProfile} boxSize={5} />
           </HStack>
-          <Icon as={GiHamburgerMenu} boxSize={5} onClick={onOpen} display={["block","block","none","none"]}/>
-          {/* <GiHamburgerMenu onClick={onOpen} boxSize={6} display={["block","block","none","none"]}></GiHamburgerMenu> */}
+          <Icon position="absolute" right="0%"
+              as={GiHamburgerMenu} boxSize={5} 
+              onClick={onOpen} 
+              display={["block","block","block","none"]}/>
           <Drawer
-        isOpen={isOpen}
-        placement='right'
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        <DrawerOverlay />
-        <DrawerContent bg="#ccc">
-          <DrawerCloseButton />
-          <DrawerHeader m="auto" w="77%">
-            {/* {Company_Name} */}
-          <HStack justifyContent={"space-around"} w="100%"
-           display={["flex","flex","none","none"]}>
-             <Icon  as={Search2Icon} boxSize={5}></Icon>
-             <Icon as={BsBag} boxSize={5} />
-             <Icon as={TiMessages} boxSize={5} />
-             <Icon as={CgProfile} boxSize={5} />
-          </HStack>
-          </DrawerHeader>
+            isOpen={isOpen}
+            placement='right'
+            onClose={onClose}
+            finalFocusRef={btnRef}
+            >
+            <DrawerOverlay />
+            <DrawerContent bg="#ccc">
+              <DrawerCloseButton />
+              <DrawerHeader m="auto" w="100%" >
+                <Text 
+                w="123px" m="auto" mt="5%"
+                h="19px"
+                fontFamily="Cinzel Decorative" 
+                textAlign={"center"} 
+                color={"#282828"} 
+                fontSize="20.2257px" 
+                lineHeight={"19px"}>
+                {Company_Name}
+                </Text>
+              </DrawerHeader>
 
-          <DrawerBody>
-          <VStack m="auto" h="77vh" display={["flex","flex","none","none"]} justifyContent="space-between" w='80%'>
-             {NavArr?.map((e)=><Text fontFamily="montserrat" fontWeight="bold">{e}</Text>)}
-         </VStack>
-          </DrawerBody>
+              <DrawerBody h="77vh">
+              <VStack m="auto" h="100%"
+                 alignItems={'center'} display={["flex","flex","flex","none"]} 
+                 justifyContent="space-around" w='80%'>
+                {NavArr?.map((e,i)=>
+                <Link to={currentRoute}>
+                <Text key={i} 
+                onClick={()=>handleRoute(routesArr[i])}
+                color={currentRoute==routesArr[i]?"#225886":""}
+                textDecoration={currentRoute==routesArr[i]?"underline":""}
+                fontFamily={"Montserrat"} 
+                fontWeight="bold">{e}</Text>
+                </Link>
+                )}
+              </VStack>
+              </DrawerBody>
 
-          <DrawerFooter>
-            <Button variant='outline' m="auto" bg="blue.700"  onClick={onClose}>
-              Close
-            </Button>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-          </HStack>
-         {/* </HStack> */}
-         <HStack m="auto" mt="2%" display={["none","none","flex","flex"]} justifyContent="space-between" w='80%'>
-             {NavArr?.map((e)=><Text fontWeight="bold">{e}</Text>)}
-         </HStack>
+              <DrawerFooter>
+                <Button variant='outline' m="auto" bg="blue.700"  
+                onClick={onClose}>
+                  Close
+                </Button>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+        </HStack>
+        <HStack m="auto" mt="1%"  
+            display={["none","none","none","flex"]} 
+            justifyContent="space-between" w='100%'>
+            {NavArr?.map((e,i)=>
+            
+            <Text key={i} 
+            color={currentRoute==routesArr[i]?"#225886":""}
+            textDecoration={currentRoute==routesArr[i]?"underline":""}
+             fontSize={{md:"14px",lg:"16px"}} h="20px"  fontFamily={"Montserrat"} 
+            fontWeight="800" lineHeight={"20px"}
+            onClick={()=>handleRoute(routesArr[i])}>
+             <Link to={currentRoute} >
+             {e}
+             </Link>
+              </Text>
+              
+            )}
+        </HStack>
+        <Input w="100%" m="auto" size={'sm'} placeholder="Search"
+              mt="0.5%" mb="0.5%" border="2px solid #ccc" borderRadius={"7px"}
+              display={[searchDisplay,searchDisplay,"none","none"]}>
+        </Input>
       </Box>
+       
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { Button, Image, Text } from '@chakra-ui/react';
+import { Box, Button, Image, Text } from '@chakra-ui/react';
 import React from 'react'
 import Carousel from 'react-elastic-carousel';
 
@@ -13,16 +13,38 @@ const Carousels = ({items}) => {
 
   return (
        <Carousel breakPoints={breakPoints}>
-        {items.map((e,i) => <div key={i} mb="1%">
-            <Image src={e.img} mb="1%"></Image>
-            <Text mb="1%" color={"#ccc"} fontSize={12}>{e.category}</Text>
-             <Text mb="1%">{e.title}</Text>
-             <Text mb="1%" fontWeight={"bold"}>{e.price}</Text>
+        {items.map((e,i) => 
+        <Box 
+        key={i} 
+        mb="1%" 
+        textAlign="center"
+        line-spacing="0.05em"
+        fontFamily="Montserrat">
+          {/* <Box bg="green" h="22px" w="33px" 
+            position={"absolute"} zIndex="10" borderRadius={"5px"}
+             left="240px"></Box> */}
+            <Image src={e.img} h="218px"
+             w="207.12px" mb="2%" position={"relative"}>
+              
+            </Image>
+            
+            <Text mb="2%" mt="2%" 
+            color={"#AAAAAA"}
+              fontWeight={"400"}
+             lineHeight="12.19px" 
+             fontSize="14px">{e.category}</Text>
+             <Text mb="2%"  color="#282828"
+             fontWeight={"400"}
+             lineHeight="17px" 
+             fontSize="16px">{e.title}</Text>
+             <Text mb="1%" fontWeight={"700"}
+             lineHeight="18px"  color="#282828"
+             fontSize="18px">{e.price}</Text>
              <Text mb="2%">
                 {e.star}
              </Text>
-             <Button fontSize={14} fontWeight={"bold"} border="2px solid" mt="2%" borderRadius={"2px"}>{e.btnText}</Button>
-            </div>)}
+             <Button fontSize={12} fontWeight={"bold"} border="2px solid #282828" mt="2%" borderRadius={"2px"}>{e.btnText}</Button>
+            </Box>)}
       </Carousel>
   )
 }
